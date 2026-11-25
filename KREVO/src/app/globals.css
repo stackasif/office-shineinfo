@@ -1,0 +1,198 @@
+
+@import "tailwindcss";
+
+:root {
+  --background: #E6E3D6;
+  --foreground: #22201E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* Smooth infinite creator carousel */
+
+.creator-marquee {
+  width: max-content;
+  display: flex;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  animation: creator-marquee-scroll 65s linear infinite;
+}
+
+@keyframes creator-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Pause animation when hovering */
+.creator-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .creator-marquee {
+    animation: none;
+  }
+}
+
+
+.creator-marquee {
+  animation: creator-marquee 45s linear infinite;
+}
+
+.group\/slider:hover .creator-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .creator-marquee {
+    animation: none;
+  }
+}
+
+
+@keyframes workflow-progress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.workflow-progress {
+  animation: workflow-progress 4s linear forwards;
+}
+
+@keyframes workflow-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.995);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-workflow-fade-in {
+  animation: workflow-fade-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* KREVO Workflow - Solid Colors Only */
+
+.krevo-workflow,
+.krevo-workflow * {
+  background-image: none !important;
+}
+
+/* Main workflow card */
+.krevo-workflow [class*="bg-[#D8D4FF]"] {
+  background-color: #E3E0D5 !important;
+}
+
+/* Dashboard cards */
+.krevo-workflow [class~="bg-white"] {
+  background-color: #F1EFE6 !important;
+}
+
+/* Inner sections */
+.krevo-workflow [class~="bg-gray-50"],
+.krevo-workflow [class~="bg-gray-100"] {
+  background-color: #E3E0D5 !important;
+}
+
+/* Remove decorative blur shapes */
+.krevo-workflow .blur-3xl {
+  display: none !important;
+}
+
+/* Solid dark buttons */
+.krevo-workflow [class*="bg-[#333333]"],
+.krevo-workflow [class*="bg-[#444444]"] {
+  background-color: #22201E !important;
+  color: #E6E3D6 !important;
+}
+
+/* Solid active tab */
+.krevo-workflow button[class*="bg-white"] {
+  background-color: #DCD9CE !important;
+  color: #22201E !important;
+}
+
+/* No pink */
+.krevo-workflow [class*="bg-pink-"],
+.krevo-workflow [class*="text-[#EC1760]"] {
+  background-color: #eceae2 !important;
+  color: #22201E !important;
+}
+
+/* Main text */
+.krevo-workflow {
+  color: #22201E;
+}
+
+
+/* Smooth Infinite Creator Carousel */
+
+@keyframes creator-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.creator-marquee {
+  display: flex;
+  width: max-content;
+  animation: creator-marquee 55s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Pause only when user intentionally hovers */
+.group\/slider:hover .creator-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .creator-marquee {
+    animation: none;
+    will-change: auto;
+  }
+}
