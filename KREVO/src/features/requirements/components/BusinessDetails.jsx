@@ -58,7 +58,7 @@ export default function BusinessDetails({ formData, handleChange }) {
             required
             className="w-full rounded-lg border border-[#D5D1C5] bg-transparent px-4 py-3 text-xs outline-none focus:border-[#22201E]"
           >
-            <option value="">Select your category</option>
+            <option value="" disabled>Select your category</option>
 
             {categories.map((category) => (
               <option key={category} value={category}>
